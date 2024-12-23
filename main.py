@@ -1,3 +1,4 @@
+# chay 'pip install openpyxl' trong terminal
 import openpyxl
 
 class FinancialDSL:
