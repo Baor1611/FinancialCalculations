@@ -1,2 +1,6 @@
 # FinancialCalculations
-Run 'pip install openpyxl'
+Innstall openpyxl
+
+```bash
+pip install openpyxl
+```
