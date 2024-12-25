@@ -1,6 +1,6 @@
 # FinancialCalculations
-Innstall openpyxl
+Innstall antlr4 and openpyxl
 
 ```bash
-pip install openpyxl
+pip install antlr4-python3-runtime openpyxl
 ```
