@@ -13,7 +13,7 @@ from CodeRunner import CodeRunner
 class FinancialCalculator:
     def __init__(self, master):
         self.master = master
-        master.title("Excel Calculator")
+        master.title("Financial Calculator")
         master.geometry("400x500")
         master.configure(bg='#f0f0f0')
 
@@ -90,9 +90,11 @@ class FinancialCalculator:
         return code_runner.variables
 
     def display_results(self, results):
+        self.results_text.config(state='normal')       
         self.results_text.delete('1.0', tk.END)
         for key, value in results.items():
-            self.results_text.insert(tk.END, f"{key} = {value}\n")
+            self.results_text.insert(tk.END, f"{key:<{20}} = {value}\n")
+        self.results_text.config(state='disabled')            
 
 if __name__ == '__main__':
     root = tk.Tk()
