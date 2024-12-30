@@ -1,4 +1,5 @@
 from ASTUtils import *
+import math
 
 class CodeRunner:
     def __init__(self):
@@ -28,6 +29,8 @@ class CodeRunner:
             if right == 0:
                 raise ZeroDivisionError("Division by zero.")
             return left / right
+        elif ctx.op == "^":
+            return math.pow(left, right)
 
     def visitFloat(self, ctx: Float):
         return ctx.value

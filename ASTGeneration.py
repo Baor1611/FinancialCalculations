@@ -30,6 +30,12 @@ class ASTGeneration(SampleVisitor):
             return ctx.factor().accept(self)
         
     def visitFactor(self, ctx: SampleParser.FactorContext):
+        if ctx.factor():
+            return BinOp("^", ctx.factor().accept(self), ctx.atom().accept(self))
+        else:
+            return ctx.atom().accept(self)
+         
+    def visitAtom(self, ctx: SampleParser.FactorContext):
         if ctx.expression():
             return Parens(ctx.expression().accept(self))
         elif ctx.ID():

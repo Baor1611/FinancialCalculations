@@ -39,5 +39,10 @@ class SampleVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by SampleParser#atom.
+    def visitAtom(self, ctx:SampleParser.AtomContext):
+        return self.visitChildren(ctx)
+
+
 
 del SampleParser
